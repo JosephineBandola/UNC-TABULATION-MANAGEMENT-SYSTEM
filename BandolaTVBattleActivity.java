@@ -2,7 +2,8 @@
   Date: 09/10/25
   Class code: BIT213L OOP
 */
-
+IMPORT THIS SHIT
+  
 import java.util.Scanner;
 import java.util.Random;
 
@@ -117,3 +118,4 @@ public class BandolaTVBattleActivity {
         input.close();
     }
 }
+
