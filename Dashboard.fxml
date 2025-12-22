@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="ph.edu.unc.pageantms.controller.DashboardController"
+            stylesheets="@../css/styles.css"
+            prefWidth="1300.0" prefHeight="850.0">
+
+    <top>
+        <HBox styleClass="header-panel" style="-fx-padding: 15; -fx-alignment: CENTER_LEFT;">
+            <Label fx:id="welcomeLabel" text="Pageant Management System" style="-fx-text-fill: #927400;">
+                <font><Font name="Arial Bold" size="20.0"/></font>
+            </Label>
+        </HBox>
+    </top>
+
+    <left>
+        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" styleClass="sidebar">
+            <content>
+                <VBox spacing="5" styleClass="sidebar" style="-fx-padding: 15;" prefWidth="280">
+
+                    <Label fx:id="lblParticipant" text="PARTICIPANT RECORD" styleClass="section-label"/>
+                    <Button fx:id="btnApplicants" text="Applicants" maxWidth="Infinity" styleClass="sidebar-button" onAction="#showApplicants"/>
+                    <Button fx:id="btnCandidates" text="Candidates" maxWidth="Infinity" styleClass="sidebar-button" onAction="#showCandidates"/>
+
+                    <Separator style="-fx-opacity: 0.2;"/>
+
+                    <Label fx:id="lblContest" text="CONTEST MANAGEMENT" styleClass="section-label"/>
+                    <Button fx:id="btnRounds" text="Rounds" maxWidth="Infinity" styleClass="sidebar-button" onAction="#showRounds"/>
+                    <Button fx:id="btnCriteria" text="Criteria Library" maxWidth="Infinity" styleClass="sidebar-button" onAction="#showCriteria"/>
+                    <Button fx:id="btnJudges" text="List of Judges" maxWidth="Infinity" styleClass="sidebar-button" onAction="#showJudges"/>
+
+                    <Separator style="-fx-opacity: 0.2;"/>
+
+                    <Label fx:id="lblRoundDetails" text="ROUND DETAILS" styleClass="section-label"/>
+                    <Button fx:id="btnSegments" text="Segments per Round" maxWidth="Infinity" styleClass="sidebar-button" onAction="#showSegments"/>
+                    <Button fx:id="btnAssignCriteria" text="Criterions per Segment" maxWidth="Infinity" styleClass="sidebar-button" onAction="#showAssignCriteria"/>
+                    <Button fx:id="btnAssignJudge" text="Judges per Round" maxWidth="Infinity" styleClass="sidebar-button" onAction="#showAssignJudge"/>
+
+                    <Separator style="-fx-opacity: 0.2;"/>
+
+                    <Label fx:id="lblScoring" text="SCORING &amp; RESULTS" styleClass="section-label"/>
+                    <Button fx:id="btnResults" text="Official Results" maxWidth="Infinity" onAction="#showResults"
+                            style="-fx-background-color: #927400; -fx-text-fill: white; -fx-font-weight: bold;"/>
+
+                    <Button fx:id="btnJudgeScores" text="Judge Scoresheets" maxWidth="Infinity" styleClass="sidebar-button" onAction="#showJudgeScoreAnalysis"/>
+                    <Button fx:id="btnScoreEntry" text="Judge Score Entry" maxWidth="Infinity" styleClass="sidebar-button" onAction="#showScoreEntry"/>
+
+                    <Region prefHeight="30"/>
+                    <Separator style="-fx-opacity: 0.2;"/>
+                    <Button text="Logout" maxWidth="Infinity" style="-fx-background-color: #333333;" onAction="#handleLogout"/>
+                </VBox>
+            </content>
+        </ScrollPane>
+    </left>
+
+    <center>
+        <StackPane fx:id="contentArea" style="-fx-padding: 30;">
+            <Label text="Welcome to the Dashboard" textFill="#777">
+                <font><Font size="24.0"/></font>
+            </Label>
+        </StackPane>
+    </center>
+
+</BorderPane>

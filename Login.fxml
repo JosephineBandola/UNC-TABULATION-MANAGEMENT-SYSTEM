@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="ph.edu.unc.pageantms.controller.LoginController"
+      stylesheets="@../css/styles.css"
+      prefWidth="900.0" prefHeight="700.0">
+
+    <padding><Insets top="50" right="50" bottom="50" left="50"/></padding>
+
+    <Label text="Pageant Management System" style="-fx-text-fill: #927400;">
+        <font><Font name="System Bold" size="28.0"/></font>
+    </Label>
+
+    <Label text="University of Nueva Caceres" style="-fx-text-fill: #EBEBEB;">
+        <font><Font size="14.0"/></font>
+    </Label>
+
+    <TextField fx:id="usernameField" promptText="Username" maxWidth="500.0" style="-fx-font-size: 14px;"/>
+    <PasswordField fx:id="passwordField" promptText="Password" maxWidth="500.0" style="-fx-font-size: 14px;"/>
+
+    <Button fx:id="loginButton" text="LOGIN" maxWidth="500.0"
+            style="-fx-font-size: 14px; -fx-padding: 10;"
+            onAction="#handleLogin"/>
+
+    <Label fx:id="errorLabel" textFill="RED"/>
+</VBox>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="ph.edu.unc.pageantms.controller.JudgeDashboardController"
+            stylesheets="@../css/styles.css"
+            prefWidth="1000.0" prefHeight="700.0">
+
+    <top>
+        <HBox styleClass="header-panel" style="-fx-padding: 15; -fx-alignment: CENTER_LEFT;" spacing="20">
+            <Label text="JUDGE SCORING PORTAL" style="-fx-text-fill: #927400;">
+                <font><Font name="Arial Bold" size="20.0"/></font>
+            </Label>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label fx:id="lblJudgeName" text="Judge: Name" textFill="#EBEBEB">
+                <font><Font size="16.0"/></font>
+            </Label>
+            <Button text="Logout" onAction="#handleLogout" style="-fx-background-color: #333333;"/>
+        </HBox>
+    </top>
+
+    <center>
+        <VBox spacing="15" style="-fx-padding: 20;">
+
+            <HBox spacing="15" alignment="CENTER_LEFT"
+                  style="-fx-background-color: #222222; -fx-padding: 15; -fx-background-radius: 5; -fx-border-color: #927400; -fx-border-radius: 5;">
+                <Label text="Select Competition Segment:">
+                    <font><Font name="System Bold" size="14"/></font>
+                </Label>
+                <ComboBox fx:id="cmbSegments" prefWidth="350" promptText="Choose a Segment..."/>
+                <Button text="LOAD CANDIDATES" onAction="#loadScoringData"/>
+            </HBox>
+
+            <VBox spacing="10" VBox.vgrow="ALWAYS">
+                <HBox alignment="CENTER_LEFT">
+                    <Label text="OFFICIAL SCORING SHEET" style="-fx-text-fill: #927400;">
+                        <font><Font name="System Bold" size="18"/></font>
+                    </Label>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Label text="* Double-click a cell to enter score" textFill="#777" style="-fx-font-style: italic;"/>
+                </HBox>
+
+                <TableView fx:id="tblScoring" VBox.vgrow="ALWAYS" style="-fx-font-size: 14px;">
+                    <columns>
+                        <TableColumn fx:id="colCandidate" text="Candidate Name" prefWidth="200"/>
+                    </columns>
+                    <placeholder>
+                        <Label text="Please select a segment above to load candidates."/>
+                    </placeholder>
+                </TableView>
+
+                <HBox alignment="CENTER_RIGHT" style="-fx-padding: 10 0 0 0;">
+                    <Button text="SUBMIT FINAL SCORES"
+                            style="-fx-font-size: 16px; -fx-padding: 10 30;"
+                            onAction="#handleSubmitScores"/>
+                </HBox>
+            </VBox>
+
+        </VBox>
+    </center>
+</BorderPane>
